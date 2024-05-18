@@ -1,0 +1,328 @@
+:root{
+    --borders: #FFD369;
+    --font-nav: #393E46;
+    --navbar: #EEEEEE;
+    --background: #222831;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background: var(--font-nav);
+    display: flex;
+    flex-direction: row;
+}
+
+nav{
+    height: 100%;
+    width: 15%;
+    position: sticky;
+    top: 0;
+    left: 0;
+    background: var(--background);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: baseline;
+}
+
+.nav-main{
+    /* position: absolute;
+    top: 0; */
+    height: 300px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+nav .nav-main h2{
+    font-size: 1.5rem;
+    color: var(--navbar);
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+nav .song-types-container{
+    background: var(--font-nav);
+    width: 100%;
+    max-height: 280px;
+    border: 1px solid var(--borders);
+    overflow-y: auto;
+}
+
+.song-types-container::-webkit-scrollbar {
+    width: 10px;
+}
+
+.song-types-container::-webkit-scrollbar-thumb {
+    background-color: var(--borders);
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.song-types-container::-webkit-scrollbar-track {
+    background-color: var(--background); 
+}
+
+nav ul.song-types li{
+    width: 100%;
+    padding: 10px 0;
+    color: var(--navbar);
+    cursor: pointer;
+}
+
+nav ul.song-types li:hover{
+    background: #ffffff08;
+}
+
+nav ul.song-types li.active{
+    color: var(--borders);
+    background: #ffffff18;
+}
+
+#navbar ul.main li a.active{
+    color: var(--borders);
+}
+
+nav ul.main li a.active,
+nav ul.main li a:hover{
+    border-bottom: 3px solid var(--borders);
+    transition: 0.3s ease;
+}
+
+nav ul.main li{
+    padding: 16px 0;
+}
+
+a{
+    text-decoration: none;
+    color: var(--navbar);
+}
+
+#right-container{
+    width: 100%;
+}
+
+.top-bar{
+    position: sticky;
+    top: 0;
+    left: 0;
+    height: 80px;
+    background:  var(--background);
+}
+
+#search-id{
+    position: relative;
+    transform: translate(10%, 50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--font-nav);
+    width: 400px;
+    border-radius: 20px;
+    border: 1px solid var(--borders);
+    border-right: 0;
+}
+
+input.search-input{
+    padding: 10px 20px;
+    outline: 0;
+    border-radius: 20px;
+    border: 0;
+    width: 80%;
+    background: none;
+    color: #fff;
+}
+
+input.search-input::placeholder{
+    color: #cccccc;
+}
+
+#search-id button{
+    font-size: 1rem;
+    width: 20%;
+    height: 40px;
+    outline: 0;
+    border: 0;
+    border-radius: 20px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    background: var(--borders);
+    color: var(--font-nav);
+    cursor: pointer;
+}
+
+#search-id button:hover{
+    box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.4);
+}
+
+#search-id button:active{
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3),inset 0px 0px 3px rgba(0, 0, 0, 0.3);
+}
+
+section .bottom{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: #0e0d0d;
+    color: var(--navbar);
+    height: 150px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.icons{
+    margin-top: 14px;
+    z-index: 1;
+}
+
+.icons i{
+    cursor: pointer;
+    margin: 0 20px;
+}
+
+.icons i:hover{
+    color: #E966A0;
+}
+
+#myProgressBar{
+    -webkit-appearance: none;
+    appearance: none;
+    width: 85%;
+    height: 10px;
+    background-color: var(--borders);
+    color: var(--navbar);
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+#myProgressBar::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--borders);
+    border: 3px solid var(--navbar);
+}
+
+.songInfo{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    bottom: 30px;
+    left: 5vw;
+    width: 100%;
+    font-family: 'Quicksand Book', sans-serif;
+    display: flex;
+    flex-direction: row;
+}
+
+#currentSongName{
+    font-size: 1rem;
+    color: #9c9c9c;
+}
+
+.songInfo img{
+    width: 100px;
+    border: 1px solid var(--borders);
+}
+
+#current-time, #music-duration{
+    font-family: 'Poppins', sans-serif;
+    font-size: 100%;
+}
+
+.duration-progressbar{
+    display: flex;
+    justify-content:space-between;
+    width: 50%;
+    align-items: center;
+}
+
+
+section .collection{
+    position: relative;
+    height: 80vh;
+    padding: 50px 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 30px;
+    overflow-y: scroll;
+}
+
+section .collection::-webkit-scrollbar{
+    width: 10px;
+}
+
+section .collection::-webkit-scrollbar-thumb{
+    background: var(--borders);
+}
+
+
+section .collection .songs img{
+    width: 200px;
+}
+
+section .collection .songs{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--navbar);
+    padding: 10px 0;
+}
+
+section .collection .songs .playSong{
+    position: absolute;
+    transform: translateY(150%);
+    color: #fff;
+    font-size: 50px;
+    cursor: pointer;
+}
+
+section .collection .songs .playSong:hover{
+    color: #E966A0;
+}
+
+section .collection .songs h3{
+    color: var(--background);
+}
+
+section .collection .songs h4{
+    color: #9c9c9c;
+    font-size: 0.8rem;
+}
+
+section #right-container{
+    overflow-y: hidden;
+}
+
+.collection .background{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0.1;
+}
